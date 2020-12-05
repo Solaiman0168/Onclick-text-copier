@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container{
+                width: 100%;
+                min-height: 100vh;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background: #e9faff;
+            }
+
+            .copy_text{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 500px;
+                background: #fff;
+            }
+        </style>
+    </head>
+<body>
+
+    <div class="container">
+        <div class="copy_text">
+            <p onclick="textCopied(this)">Hello Click Me!</p>
+        </div> 
+    </div>
+ 
+
+<script>
+    function textCopied(that){
+    var inp =document.createElement('input');
+    document.body.appendChild(inp)
+    inp.value =that.textContent
+    inp.select();
+    document.execCommand('copy',false);
+    inp.remove();
+    alert('Text Copied Successfully');
+    }
+</script>
+
+</body>
+</html>
